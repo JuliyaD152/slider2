@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>JS4</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        img{
+            width:300px;
+            height:300px;
+            margin-left: 450px;
+        }
+        div{
+            margin-left: 530px;
+            margin-top:50px;
+        }
+        button{
+            width:50px;
+            height:20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="" id="pictureslide">
+    <div>
+        <button type="button" id="playpic" onclick="playslide()">Play</button>
+        <button type="button" id="stoppic" onclick="stopslide()">Stop</button>
+    </div>
+   
+    <script>
+    	var images = new Array();
+        var i = 0;
+
+        images[0]="images1.jpg";
+        images[1]="2img.jpg";
+        images[2]="3img.jpg";
+        images[3]="4img.jpg";
+        images[4]="5img.jpg";
+        
+        function slideshow(){
+            document.getElementById("pictureslide").src=images[i];
+            i++;
+            if(i == images.length){
+                i=0;
+            }
+        }
+        slideshow();
+       
+         var playingbut=document.getElementById('#pictureslide');
+         var stopbut=document.getElementById('#pictureslide');
+         let intervalID
+            
+            function playslide(){
+               intervalID=setInterval("slideshow()", 1000); 
+            }   
+             function stopslide(){
+                //  stopb=setInterval("slideshow()", 1000);
+                 clearInterval(intervalID);
+             }
+             
+          
+            
+        
+            
+
+        </script>
+</body>
+</html>
